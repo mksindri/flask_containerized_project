@@ -1,0 +1,23 @@
+<h2>Client List</h2>
+<a href="/add">Add Client</a> | <a href="/logout">Logout</a>
+
+<table border="1">
+<tr>
+    <th>Name</th><th>Mobile</th><th>Company</th>
+    <th>Designation</th><th>Address</th><th>Actions</th>
+</tr>
+
+{% for c in clients %}
+<tr>
+    <td>{{ c[1] }}</td>
+    <td>{{ c[2] }}</td>
+    <td>{{ c[3] }}</td>
+    <td>{{ c[4] }}</td>
+    <td>{{ c[5] }}</td>
+    <td>
+        <a href="/edit/{{ c[0] }}">Edit</a>
+        <a href="/delete/{{ c[0] }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
